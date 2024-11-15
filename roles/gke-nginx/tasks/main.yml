@@ -1,0 +1,6 @@
+---
+- name: Setup GKE environment
+  import_tasks: gke_setup.yml
+
+- name: Deploy NGINX
+  import_tasks: nginx_deploy.yml

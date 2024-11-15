@@ -1,0 +1,7 @@
+---
+- name: Restart NGINX pods
+  k8s:
+    state: absent
+    definition: "{{ lookup('template', 'nginx-deployment.yml.j2') }}"
+    namespace: "{{ nginx_namespace }}"
+  listen: restart nginx

@@ -1,0 +1,19 @@
+---
+gke_cluster_name: "nginx-cluster"
+gke_region: "us-east1"
+project_id: "gke-terraform-deploy"
+
+nginx_namespace: default
+nginx_replicas: 3
+nginx_container_port: 80
+nginx_service_port: 80
+nginx_service_type: LoadBalancer
+nginx_image: nginx
+nginx_image_tag: latest
+nginx_resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 200m
+    memory: 256Mi

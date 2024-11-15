@@ -1,0 +1,16 @@
+---
+- name: Install GKE auth plugin
+  ansible.builtin.command: gcloud components install gke-gcloud-auth-plugin -q
+  changed_when: false
+
+- name: Configure GKE credentials
+  ansible.builtin.command: >
+    gcloud container clusters get-credentials {{ gke_cluster_name }}
+    --region={{ gke_region }}
+    --project={{ project_id }}
+  changed_when: false
+
+- name: Ensure required Python packages are installed
+  ansible.builtin.pip:
+    name: kubernetes
+    state: present

@@ -17,9 +17,6 @@ secrets.yaml
 # Ignore logs
 ansible.log
 
-# Ignore roles downloaded from Galaxy
-roles/*
-
 # Ignore custom inventory files if sensitive
 inventory/
 hosts
@@ -33,5 +30,4 @@ venv/
 env/
 
 # Ignore any other custom files or directories
-*.cfg
 *.ini

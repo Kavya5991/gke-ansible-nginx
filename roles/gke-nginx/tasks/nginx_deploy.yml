@@ -1,0 +1,20 @@
+---
+- name: Create NGINX deployment
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'nginx-deployment.yml.j2') }}"
+    namespace: "{{ nginx_namespace }}"
+
+- name: Create NGINX service
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'nginx-service.yml.j2') }}"
+    namespace: "{{ nginx_namespace }}"
+
+- name: Display NGINX service details
+  ansible.builtin.command: kubectl get svc nginx-service -n {{ nginx_namespace }}
+  register: service_info
+
+- name: Print service details
+  ansible.builtin.debug:
+    var: service_info.stdout_lines
