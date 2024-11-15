@@ -9,10 +9,9 @@ This Ansible role automates the deployment of NGINX on Google Kubernetes Engine 
 - kubectl
 - Access to a GKE cluster
 
-```bash
-# Install required tools
-Refer to Google's documentation to install Google Cloud CLI
+Refer to Google's documentation on [installing Google Cloud SDK on Linux](https://cloud.google.com/sdk/docs/install-sdk#linux)
 
+```bash
 # Install required collections
 ansible-galaxy collection install kubernetes.core
 ```
