@@ -1,0 +1,37 @@
+# Ignore temporary and backup files
+*.retry
+*.bak
+*.swp
+*.tmp
+
+# Ignore SSH keys or sensitive information
+*.pem
+*.key
+secrets.yml
+secrets.yaml
+
+# Ignore encrypted vault files if they're not meant to be shared
+*.vault.yml
+*.vault.yaml
+
+# Ignore logs
+ansible.log
+
+# Ignore roles downloaded from Galaxy
+roles/*
+
+# Ignore custom inventory files if sensitive
+inventory/
+hosts
+
+# Ignore specific cache or local directories
+~/.ansible/
+.cache/
+
+# Ignore Python virtual environments if using with Ansible
+venv/
+env/
+
+# Ignore any other custom files or directories
+*.cfg
+*.ini
